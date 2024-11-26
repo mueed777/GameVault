@@ -1,11 +1,30 @@
-import "./App.css";
-import { HStack, VStack, Stack } from "@chakra-ui/react";
-import { Button } from "./components/ui/button";
-import { RiArrowRightLine, RiMailLine } from "react-icons/ri";
-import { ColorPalette } from "@chakra-ui/react";
+import { Grid, GridItem, Show, useBreakpointValue } from "@chakra-ui/react";
 
 function App() {
-  return <VStack>Hello world how are yoafaau</VStack>;
+  const showAside = useBreakpointValue({ base: false, lg: true });
+
+  return (
+    <Grid
+      templateAreas={{
+        base: `"nav" "main"`,
+        lg: `"nav nav" "aside main"`,
+      }}
+    >
+      <GridItem area="nav" bg="coral">
+        Nav
+      </GridItem>
+
+      {showAside && (
+        <GridItem area="aside" bg="gold">
+          Aside
+        </GridItem>
+      )}
+
+      <GridItem area="main" bg="dodgerblue">
+        Main
+      </GridItem>
+    </Grid>
+  );
 }
 
 export default App;
