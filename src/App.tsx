@@ -15,7 +15,7 @@ function App() {
 
       <Show above="lg">
         <GridItem area="aside" bg="gold">
-          Aside
+          Asideee
         </GridItem>
       </Show>
 
