@@ -1,6 +1,13 @@
-import { SimpleGrid, Text } from "@chakra-ui/react";
+import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
+import { ERROR_FETCHING_DATA } from "../common/messages";
 
 const GameGrid = () => {
   const { games, error } = useGames();
@@ -8,7 +15,11 @@ const GameGrid = () => {
   return (
     <>
       {error ? (
-        <Text>{error}</Text>
+        <Alert status="error">
+          <AlertIcon></AlertIcon>
+          <AlertTitle>{error}</AlertTitle>
+          <AlertDescription>{ERROR_FETCHING_DATA}</AlertDescription>
+        </Alert>
       ) : (
         <SimpleGrid
           columns={{ sm: 1, md: 2, lg: 3, xl: 3 }}
