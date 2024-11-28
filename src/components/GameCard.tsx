@@ -9,6 +9,7 @@ import {
 import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
 import GameScore from "./GameScore";
+import croppedImageUrl from "../services/image-url";
 
 interface Props {
   game: Game;
@@ -19,7 +20,7 @@ const GameCard = ({ game, index }: Props) => {
   return (
     <Card>
       <Image
-        src={game.background_image}
+        src={croppedImageUrl(game.background_image)}
         borderRadius={10}
         overflow={"hidden"}
       ></Image>
