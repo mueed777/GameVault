@@ -18,12 +18,8 @@ interface Props {
 
 const GameCard = ({ game, index }: Props) => {
   return (
-    <Card>
-      <Image
-        src={croppedImageUrl(game.background_image)}
-        borderRadius={10}
-        overflow={"hidden"}
-      ></Image>
+    <Card width="400px" borderRadius={10} overflow="hidden">
+      <Image src={croppedImageUrl(game.background_image)}></Image>
       <CardBody>
         <Stack>
           <PlatformIconList
