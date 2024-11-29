@@ -8,9 +8,11 @@ import {
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import { ERROR_FETCHING_DATA } from "../common/messages";
+import GameCardSkeleton from "./GameCardSkeleton";
 
 const GameGrid = () => {
-  const { games, error } = useGames();
+  const { games, error, isLoading } = useGames();
+  const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
     <>
@@ -26,6 +28,10 @@ const GameGrid = () => {
           spacing={10}
           mx={5}
         >
+          {isLoading &&
+            skeleton.map((skeleton) => (
+              <GameCardSkeleton key={skeleton}></GameCardSkeleton>
+            ))}
           {games.map((game, index) => (
             <GameCard key={game.id} game={game} index={index}></GameCard>
           ))}
