@@ -29,12 +29,12 @@ const GameGrid = () => {
           {isLoading &&
             skeleton.map((skeleton) => (
               <GameCardContainer key={skeleton}>
-                <GameCardSkeleton key={skeleton}></GameCardSkeleton>
+                <GameCardSkeleton></GameCardSkeleton>
               </GameCardContainer>
             ))}
           {data.map((game, index) => (
             <GameCardContainer key={game.id}>
-              <GameCard key={game.id} game={game} index={index}></GameCard>
+              <GameCard game={game} index={index}></GameCard>
             </GameCardContainer>
           ))}
         </SimpleGrid>
