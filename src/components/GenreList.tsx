@@ -29,8 +29,8 @@ const GenreList = () => {
               <GenresSkeleton key={index} />
             ))}
           {data.map((genre) => (
-            <HStack>
-              <ListItem key={genre.id} paddingY="5px">
+            <HStack key={genre.id}>
+              <ListItem paddingY="5px">
                 <HStack>
                   <Image
                     src={croppedImageUrl(genre.image_background)}
