@@ -5,6 +5,7 @@ import {
   HStack,
   Image,
   Stack,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
@@ -17,8 +18,9 @@ interface Props {
 }
 
 const GameCard = ({ game, index }: Props) => {
+  const cardBackground = useColorModeValue("gray.100", "blackAlpha.600");
   return (
-    <Card>
+    <Card bg={cardBackground}>
       <Image src={croppedImageUrl(game.background_image)}></Image>
       <CardBody>
         <Stack>

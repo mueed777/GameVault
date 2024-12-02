@@ -6,6 +6,7 @@ import {
   Image,
   List,
   ListItem,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import useGenres, { Genres } from "../hooks/useGenres";
 import croppedImageUrl from "../services/image-url";
@@ -18,6 +19,7 @@ interface Props {
 const GenreList = ({ onSelectGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
   const genreListSkeleton = 15;
+  const fontColor = useColorModeValue("black", "white");
 
   return (
     <>
@@ -45,6 +47,7 @@ const GenreList = ({ onSelectGenre }: Props) => {
                     fontSize="lg"
                     variant="link"
                     onClick={() => onSelectGenre(genre)}
+                    color={fontColor}
                   >
                     {genre.name}
                   </Button>
