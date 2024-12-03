@@ -38,21 +38,26 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
           {data.map((genre) => (
             <HStack key={genre.id}>
               <ListItem paddingY="5px">
-                <HStack>
+                <HStack
+                  cursor="pointer"
+                  _hover={{
+                    fontWeight: "bold",
+                    fontSize: "2xl",
+                    transform: "scale(1.1)",
+                  }}
+                  onClick={() => onSelectGenre(genre)}
+                >
                   <Image
                     src={croppedImageUrl(genre.image_background)}
                     boxSize="32px"
                     borderRadius={8}
-                  ></Image>
+                  />
                   <Button
-                    fontSize={genre.id === selectedGenre?.id ? "2xl" : "lg"}
-                    fontWeight={
-                      genre.id === selectedGenre?.id ? "bold" : "normal"
-                    }
+                    fontSize="inherit"
+                    fontWeight="inherit"
                     variant="link"
-                    onClick={() => onSelectGenre(genre)}
                     color={fontColor}
-                    _hover={{ fontWeight: "bold", fontSize: "2xl" }}
+                    style={{ textDecoration: "none" }}
                   >
                     {genre.name}
                   </Button>
