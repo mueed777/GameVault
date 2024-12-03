@@ -14,9 +14,10 @@ import GenresSkeleton from "./GenresSkeleton";
 
 interface Props {
   onSelectGenre: (genre: Genres) => void;
+  selectedGenre: Genres | null;
 }
 
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
   const genreListSkeleton = 15;
   const fontColor = useColorModeValue("black", "white");
@@ -44,10 +45,14 @@ const GenreList = ({ onSelectGenre }: Props) => {
                     borderRadius={8}
                   ></Image>
                   <Button
-                    fontSize="lg"
+                    fontSize={genre.id === selectedGenre?.id ? "2xl" : "lg"}
+                    fontWeight={
+                      genre.id === selectedGenre?.id ? "bold" : "normal"
+                    }
                     variant="link"
                     onClick={() => onSelectGenre(genre)}
                     color={fontColor}
+                    _hover={{ fontWeight: "bold", fontSize: "2xl" }}
                   >
                     {genre.name}
                   </Button>

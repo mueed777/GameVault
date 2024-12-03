@@ -26,6 +26,7 @@ function HomePage() {
       <Show above="lg">
         <GridItem area="aside" paddingX="10px">
           <GenreList
+            selectedGenre={selectedGenre}
             onSelectGenre={(genre) => setSelectedGenre(genre)}
           ></GenreList>
         </GridItem>
