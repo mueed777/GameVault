@@ -10,14 +10,14 @@ import GameCard from "./GameCard";
 import { ERROR_FETCHING_DATA } from "../common/messages";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import { Genres } from "../hooks/useGenres";
+import { GameQuery } from "../HomePage";
 
 interface Props {
-  selectedGenre: Genres | null;
+  gameQuery: GameQuery;
 }
 
-const GameGrid = ({ selectedGenre }: Props) => {
-  const { data, error, isLoading } = useGames(selectedGenre);
+const GameGrid = ({ gameQuery }: Props) => {
+  const { data, error, isLoading } = useGames(gameQuery);
   const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
