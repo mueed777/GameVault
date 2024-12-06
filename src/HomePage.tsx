@@ -41,7 +41,7 @@ function HomePage() {
       </Show>
 
       <GridItem area="main">
-        <HStack>
+        <HStack spacing={5}>
           <PlatformSelector
             onSelectPlatform={(platform) =>
               setGameQuery({ ...gameQuery, platform })
