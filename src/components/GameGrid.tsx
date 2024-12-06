@@ -30,7 +30,12 @@ const GameGrid = ({ selectedGenre }: Props) => {
           <AlertDescription>{ERROR_FETCHING_DATA}</AlertDescription>
         </Alert>
       ) : (
-        <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 3 }} spacing={5} mx={5}>
+        <SimpleGrid
+          columns={{ sm: 1, md: 2, lg: 3, xl: 3 }}
+          spacing={5}
+          mx={5}
+          my={5}
+        >
           {isLoading &&
             skeleton.map((skeleton) => (
               <GameCardContainer key={skeleton}>
