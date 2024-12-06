@@ -1,9 +1,9 @@
 import useData from "./useData";
 
-interface Platform {
+export interface Platform {
   id: number;
   name: string;
-  image_background: string;
+  slug: string;
 }
 
 const usePlatforms = () => useData<Platform>("/platforms/lists/parents");
