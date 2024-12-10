@@ -3,13 +3,17 @@ import logo from "../assets/logo.webp";
 import DarkLightMode from "./DarkLightMode";
 import SearchInput from "./SearchInput";
 
-const NavBar = () => {
+interface Props {
+  onSearch: (searchText: string) => void; // will come back to this later to avoid duplication
+}
+
+const NavBar = ({ onSearch }: Props) => {
   return (
-    <HStack width="100%">
+    <HStack>
       <Link href="/HomePage">
         <Image src={logo} boxSize="60px" flexShrink={0}></Image>
       </Link>
-      <SearchInput></SearchInput>
+      <SearchInput onSearch={onSearch}></SearchInput>
       <DarkLightMode></DarkLightMode>
     </HStack>
   );
