@@ -19,10 +19,12 @@ const useGames = (gameQuery: GameQuery) =>
   useData<Game>(
     "/games",
     {
+      // always make sure parameter names are exactly same as in API doc
       params: {
         genres: gameQuery.genre?.id,
-        platforms: gameQuery.platform?.id,
+        parent_platforms: gameQuery.platform?.id,
         ordering: gameQuery.sortOrder,
+        search: gameQuery.searchText,
       },
     },
     [gameQuery]
