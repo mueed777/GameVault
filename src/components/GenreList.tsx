@@ -30,7 +30,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
           {error}
         </Alert>
       ) : (
-        <List>
+        <List mt={5}>
           {isLoading &&
             Array.from({ length: genreListSkeleton }).map((_, index) => (
               <GenresSkeleton key={index} />
