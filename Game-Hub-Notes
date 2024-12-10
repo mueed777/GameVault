@@ -1,0 +1,13 @@
+Step 1 => setting up project. For example setup react and typescript
+
+Step 2 => install whatever UI that will be used in the project
+
+Step 3 => create a base skeleton responsive layout for placeholder
+
+Step 4 => do some UI work whatever needed
+
+Step 5 => Fetching data from API. Create services folder and create api-client file inside it. api-client should include 'baseURL', 'params', 'key' etc. NOTE: in future keep API key in the backend server for security purposes.
+
+Step 6 => create custom hook to get those data. Use file name like 'useGames.ts' for example. This file should only give us list of games. Inside this file contains 'useEffect' that calls the api-client to get those data. Handle data, error, cancelation accordingly. At the the end return the 'useState' variable(s) that contains those data. Use that variable in components, for example, to show as UI
+
+Step 7 => build more and more UI as needed following same steps like this
