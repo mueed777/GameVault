@@ -13,9 +13,10 @@ const NavBar = ({ onSearch }: Props) => {
       <Link href="/HomePage">
         <Image
           src={logo}
-          boxSize="60px"
+          boxSize="50px"
           flexShrink={0}
           objectFit="cover"
+          borderRadius="full"
         ></Image>
       </Link>
       <SearchInput onSearch={onSearch}></SearchInput>
