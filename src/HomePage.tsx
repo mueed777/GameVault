@@ -30,7 +30,7 @@ function HomePage() {
         lg: "200px 1fr",
       }}
     >
-      <GridItem area="nav">
+      <GridItem area="nav" paddingX="10px">
         <NavBar
           onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
         ></NavBar>
