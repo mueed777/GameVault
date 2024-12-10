@@ -32,8 +32,10 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
         </Alert>
       ) : (
         <>
-          <Heading fontSize="2xl">Genres</Heading>
-          <List mt={3}>
+          <Heading fontSize="2xl" my={3} mt={5}>
+            Genres
+          </Heading>
+          <List>
             {isLoading &&
               Array.from({ length: genreListSkeleton }).map((_, index) => (
                 <GenresSkeleton key={index} />
