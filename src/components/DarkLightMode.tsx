@@ -11,7 +11,7 @@ const DarkLightMode = () => {
         colorScheme={"green"}
         whiteSpace="nowrap"
       >
-        {colorMode === "light" ? "Dark" : "Light"} mode
+        {colorMode === "light" ? "Dark" : "Light"}
       </Switch>
     </HStack>
   );
