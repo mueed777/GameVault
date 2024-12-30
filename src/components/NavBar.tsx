@@ -1,5 +1,5 @@
 import { HStack, Image, Link } from "@chakra-ui/react";
-import logo from "../assets/logo.webp";
+import logo from "../assets/GameVaultLogo.png";
 import DarkLightMode from "./DarkLightMode";
 import SearchInput from "./SearchInput";
 
