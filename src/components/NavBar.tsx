@@ -10,15 +10,15 @@ interface Props {
 const NavBar = ({ onSearch }: Props) => {
   return (
     <HStack>
-      <Link href="/HomePage">
-        <Image
-          src={logo}
-          boxSize="50px"
-          flexShrink={0}
-          objectFit="cover"
-          borderRadius="full"
-        ></Image>
-      </Link>
+      <Image
+        src={logo}
+        boxSize="50px"
+        flexShrink={0}
+        objectFit="cover"
+        borderRadius="full"
+        onClick={() => window.location.reload()}
+        cursor="pointer"
+      ></Image>
       <SearchInput onSearch={onSearch}></SearchInput>
       <DarkLightMode></DarkLightMode>
     </HStack>

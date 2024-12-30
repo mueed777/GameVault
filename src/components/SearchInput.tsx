@@ -25,7 +25,7 @@ const SearchInput = ({ onSearch }: Props) => {
         </InputLeftElement>
         <Input
           ref={ref}
-          type="tel"
+          type="text"
           placeholder="Search games..."
           borderRadius="30px"
           variant="filled"
