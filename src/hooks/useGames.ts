@@ -2,21 +2,15 @@ import { useQuery } from "@tanstack/react-query";
 import { GameQuery } from "../HomePage";
 import { FetchResponse } from "../services/api-client";
 import apiClient from "../services/api-client";
+import { Platform } from "./usePlatforms";
 
 export interface Game {
   id: number;
   name: string;
   background_image: string;
-  parent_platforms: { platform: PlatformInfo }[];
+  parent_platforms: { platform: Platform }[];
   metacritic: number;
   rating_top: number;
-}
-
-// TODO: remove this duplicated Platform object
-export interface PlatformInfo {
-  id: number;
-  name: string;
-  slug: string;
 }
 
 const useGames = (gameQuery: GameQuery) =>
