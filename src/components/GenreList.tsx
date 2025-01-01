@@ -28,7 +28,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
       {error ? (
         <Alert status="error">
           <AlertIcon />
-          {"Error"}
+          {error.message}
         </Alert>
       ) : (
         <>
