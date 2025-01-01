@@ -26,7 +26,7 @@ const GameGrid = ({ gameQuery }: Props) => {
         // TODO: remove hard coded width
         <Alert status="error" width="65%">
           <AlertIcon></AlertIcon>
-          <AlertTitle>{error}</AlertTitle>
+          <AlertTitle>{error.message}</AlertTitle>
           <AlertDescription>{ERROR_FETCHING_DATA}</AlertDescription>
         </Alert>
       ) : (
@@ -36,17 +36,17 @@ const GameGrid = ({ gameQuery }: Props) => {
           mx={5}
           my={5}
         >
-          {isLoading &&
-            skeleton.map((skeleton) => (
-              <GameCardContainer key={skeleton}>
-                <GameCardSkeleton></GameCardSkeleton>
-              </GameCardContainer>
-            ))}
-          {data.map((game, index) => (
-            <GameCardContainer key={game.id}>
-              <GameCard game={game} index={index}></GameCard>
-            </GameCardContainer>
-          ))}
+          {isLoading
+            ? skeleton.map((skeleton) => (
+                <GameCardContainer key={skeleton}>
+                  <GameCardSkeleton></GameCardSkeleton>
+                </GameCardContainer>
+              ))
+            : data?.results.map((game, index) => (
+                <GameCardContainer key={game.id}>
+                  <GameCard game={game} index={index}></GameCard>
+                </GameCardContainer>
+              ))}
         </SimpleGrid>
       )}
     </>

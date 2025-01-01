@@ -1,5 +1,7 @@
+import { useQuery } from "@tanstack/react-query";
 import { GameQuery } from "../HomePage";
-import useData from "./useData";
+import { FetchResponse } from "../services/api-client";
+import apiClient from "../services/api-client";
 
 export interface Game {
   id: number;
@@ -10,6 +12,7 @@ export interface Game {
   rating_top: number;
 }
 
+// TODO: remove this duplicated Platform object
 export interface PlatformInfo {
   id: number;
   name: string;
@@ -17,18 +20,20 @@ export interface PlatformInfo {
 }
 
 const useGames = (gameQuery: GameQuery) =>
-  useData<Game>(
-    "/games",
-    {
-      // always make sure parameter names are exactly same as in API doc
-      params: {
-        genres: gameQuery.genre?.id,
-        parent_platforms: gameQuery.platform?.id,
-        ordering: gameQuery.sortOrder,
-        search: gameQuery.searchText,
-      },
-    },
-    [gameQuery]
-  );
+  useQuery<FetchResponse<Game>, Error>({
+    queryKey: ["games", gameQuery],
+    queryFn: () =>
+      apiClient
+        .get<FetchResponse<Game>>("/games", {
+          // always make sure parameter names are exactly same as in API doc
+          params: {
+            genres: gameQuery.genre?.id,
+            parent_platforms: gameQuery.platform?.id,
+            ordering: gameQuery.sortOrder,
+            search: gameQuery.searchText,
+          },
+        })
+        .then((res) => res.data),
+  });
 
 export default useGames;
