@@ -15,9 +15,10 @@ import Emoji from "./Emoji";
 
 interface Props {
   game: Game;
+  index: number;
 }
 
-const GameCard = ({ game }: Props) => {
+const GameCard = ({ game, index }: Props) => {
   const cardBackground = useColorModeValue("gray.100", "blackAlpha.600");
   return (
     <Card bg={cardBackground}>
