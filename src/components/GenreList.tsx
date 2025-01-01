@@ -28,7 +28,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
       {error ? (
         <Alert status="error">
           <AlertIcon />
-          {error}
+          {"Error"}
         </Alert>
       ) : (
         <>
@@ -40,7 +40,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
               Array.from({ length: genreListSkeleton }).map((_, index) => (
                 <GenresSkeleton key={index} />
               ))}
-            {data.map((genre) => (
+            {data?.results.map((genre) => (
               <HStack key={genre.id}>
                 <ListItem paddingY="5px">
                   <HStack
