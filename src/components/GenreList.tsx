@@ -15,10 +15,9 @@ import GenresSkeleton from "./GenresSkeleton";
 
 interface Props {
   onSelectGenre: (genre: Genres) => void;
-  selectedGenre: Genres | null;
 }
 
-const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
+const GenreList = ({ onSelectGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
   const genreListSkeleton = 15;
   const fontColor = useColorModeValue("black", "white");
