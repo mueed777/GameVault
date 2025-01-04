@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import HomePage from "./HomePage";
 import theme from "./components/Theme";
 import "./index.css";
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       ></ColorModeScript>
       <QueryClientProvider client={queryClient}>
         <HomePage />
+        <ReactQueryDevtools></ReactQueryDevtools>
       </QueryClientProvider>
     </ChakraProvider>
   </React.StrictMode>
