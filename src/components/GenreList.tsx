@@ -9,18 +9,29 @@ import {
   ListItem,
   useColorModeValue,
 } from "@chakra-ui/react";
-import useGenres, { Genres } from "../hooks/useGenres";
+import useGenres from "../hooks/useGenres";
 import croppedImageUrl from "../services/image-url";
+import useGameQueryStore from "../store";
 import GenresSkeleton from "./GenresSkeleton";
 
-interface Props {
-  onSelectGenre: (genre: Genres) => void;
-}
-
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = () => {
   const { data, isLoading, error } = useGenres();
   const genreListSkeleton = 15;
   const fontColor = useColorModeValue("black", "white");
+  const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
+
+  const selectedStyles = {
+    fontWeight: "bold",
+    transform: "scale(1.1)",
+    fontSize: "2xl",
+  };
+
+  const defaultStyles = {
+    fontWeight: "normal",
+    transform: "none",
+    fontSize: "1xl",
+  };
 
   return (
     <>
@@ -49,7 +60,10 @@ const GenreList = ({ onSelectGenre }: Props) => {
                       fontSize: "2xl",
                       transform: "scale(1.1)",
                     }}
-                    onClick={() => onSelectGenre(genre)}
+                    {...(genre.id === selectedGenreId
+                      ? selectedStyles
+                      : defaultStyles)}
+                    onClick={() => setSelectedGenreId(genre.id)}
                   >
                     <Image
                       objectFit="cover"
