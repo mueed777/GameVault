@@ -60,14 +60,6 @@ const GenreList = () => {
                       fontSize: "2xl",
                       transform: "scale(1.1)",
                     }}
-                    // fontWeight={
-                    //   genre.id === selectedGenreId ? "bold" : "normal"
-                    // }
-                    // transform={
-                    //   genre.id === selectedGenreId ? "scale(1.1)" : "none"
-                    // }
-                    // fontSize={genre.id === selectedGenreId ? "2xl" : "1xl"}
-
                     {...(genre.id === selectedGenreId
                       ? selectedStyles
                       : defaultStyles)}
