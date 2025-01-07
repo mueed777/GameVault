@@ -38,7 +38,7 @@ const GameGrid = () => {
           dataLength={fetchedGameLength}
         >
           <SimpleGrid
-            columns={{ base: 1, sm: 1, md: 3, lg: 3, xl: 4 }}
+            columns={{ base: 2, sm: 1, md: 3, lg: 3, xl: 4 }}
             spacing={5}
             mx={5}
             my={5}
