@@ -1,13 +1,9 @@
-import { HStack, Image, Link } from "@chakra-ui/react";
+import { HStack, Image } from "@chakra-ui/react";
 import logo from "../assets/GameVaultLogo.png";
 import DarkLightMode from "./DarkLightMode";
 import SearchInput from "./SearchInput";
 
-interface Props {
-  onSearch: (searchText: string) => void; // will come back to this later to avoid duplication
-}
-
-const NavBar = ({ onSearch }: Props) => {
+const NavBar = () => {
   return (
     <HStack my={2}>
       <Image
@@ -19,7 +15,7 @@ const NavBar = ({ onSearch }: Props) => {
         onClick={() => window.location.reload()}
         cursor="pointer"
       ></Image>
-      <SearchInput onSearch={onSearch}></SearchInput>
+      <SearchInput></SearchInput>
       <DarkLightMode></DarkLightMode>
     </HStack>
   );
