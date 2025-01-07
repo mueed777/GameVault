@@ -9,7 +9,11 @@ const GameScore = ({ score }: Props) => {
 
   return (
     <Text fontSize="xl" fontWeight="bold">
-      <Badge fontSize="0.8em" colorScheme={color} borderRadius="4px">
+      <Badge
+        fontSize={{ base: "0.5em", md: "0.7em", lg: "0.8em" }}
+        colorScheme={color}
+        borderRadius="4px"
+      >
         {score}
       </Badge>
     </Text>
