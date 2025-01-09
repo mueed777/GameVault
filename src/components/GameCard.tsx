@@ -8,7 +8,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { Game } from "../hooks/useGames";
+import { Game } from "../entities/Game";
 import croppedImageUrl from "../services/image-url";
 import Emoji from "./Emoji";
 import GameScore from "./GameScore";
