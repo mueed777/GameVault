@@ -8,13 +8,7 @@ const NavBar = () => {
   return (
     <HStack my={2}>
       <Link to="/">
-        <Image
-          src={logo}
-          boxSize="50px"
-          flexShrink={0}
-          objectFit="inherit"
-          borderRadius="full"
-        ></Image>
+        <Image src={logo} boxSize="50px" borderRadius={8}></Image>
       </Link>
       <SearchInput></SearchInput>
       <DarkLightMode></DarkLightMode>
