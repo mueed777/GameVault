@@ -7,11 +7,12 @@ import {
   Stack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { Game } from "../hooks/useGames";
-import PlatformIconList from "./PlatformIconList";
-import GameScore from "./GameScore";
+import { Link } from "react-router-dom";
+import { Game } from "../entities/Game";
 import croppedImageUrl from "../services/image-url";
 import Emoji from "./Emoji";
+import GameScore from "./GameScore";
+import PlatformIconList from "./PlatformIconList";
 
 interface Props {
   game: Game;
@@ -28,9 +29,11 @@ const GameCard = ({ game }: Props) => {
             platforms={game.parent_platforms.map((res) => res.platform)}
           ></PlatformIconList>
           <HStack justify={"space-between"}>
-            <Heading fontSize={{ base: "md", md: "xl", lg: "2xl" }}>
-              {game.name}
-            </Heading>
+            <Link to={`/games/${game.slug}`}>
+              <Heading fontSize={{ base: "md", md: "xl", lg: "2xl" }}>
+                {game.name}
+              </Heading>
+            </Link>
             <GameScore score={game.metacritic}></GameScore>
           </HStack>
           <Emoji rating={game.rating_top}></Emoji>
