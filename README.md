@@ -4,4 +4,4 @@ Start exploring an extensive collection of games with GameVault! Whether you're 
 
 ## Version
 
-MVP is in production and running v2.0.0
+MVP is in production and running v2.0.1
