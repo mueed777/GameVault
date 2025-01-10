@@ -7,16 +7,16 @@ import SearchInput from "./SearchInput";
 const NavBar = () => {
   return (
     <HStack my={2}>
-      <Link to="/">
-        <Image
-          src={logo}
-          boxSize="50px"
-          flexShrink={0}
-          borderRadius={10}
-          minW="50px"
-          minH="50px"
-        ></Image>
-      </Link>
+      <Image
+        src={logo}
+        boxSize="50px"
+        flexShrink={0}
+        borderRadius={10}
+        minW="50px"
+        minH="50px"
+        onClick={() => (window.location.href = "/")}
+        cursor="pointer"
+      ></Image>
       <SearchInput></SearchInput>
       <DarkLightMode></DarkLightMode>
     </HStack>
