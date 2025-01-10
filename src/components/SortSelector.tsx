@@ -1,5 +1,12 @@
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from "@chakra-ui/react";
 import useGameQueryStore from "../store";
 
 const SortSelector = () => {
@@ -20,22 +27,24 @@ const SortSelector = () => {
   );
 
   return (
-    <Menu>
-      <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-        Order by: {currentSortOrder?.label || "Relevance"}
-      </MenuButton>
-      <MenuList>
-        {sortOrders.map((order) => (
-          <MenuItem
-            onClick={() => setSortOrder(order.value)}
-            key={order.value}
-            value={order.value}
-          >
-            {order.label}
-          </MenuItem>
-        ))}
-      </MenuList>
-    </Menu>
+    <Box paddingRight={10}>
+      <Menu>
+        <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+          Order by: {currentSortOrder?.label || "Relevance"}
+        </MenuButton>
+        <MenuList>
+          {sortOrders.map((order) => (
+            <MenuItem
+              onClick={() => setSortOrder(order.value)}
+              key={order.value}
+              value={order.value}
+            >
+              {order.label}
+            </MenuItem>
+          ))}
+        </MenuList>
+      </Menu>
+    </Box>
   );
 };
 
