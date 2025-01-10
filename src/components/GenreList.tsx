@@ -42,7 +42,7 @@ const GenreList = () => {
         </Alert>
       ) : (
         <>
-          <Heading fontSize="2xl" my={3} mt={5}>
+          <Heading fontSize="2xl" my={2} mt={5}>
             Genres
           </Heading>
           <List>
