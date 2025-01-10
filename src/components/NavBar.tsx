@@ -6,7 +6,7 @@ import SearchInput from "./SearchInput";
 
 const NavBar = () => {
   return (
-    <HStack my={2}>
+    <HStack>
       <Image
         src={logo}
         boxSize="50px"
