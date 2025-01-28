@@ -5,7 +5,7 @@ interface Props {
 }
 
 const GameScore = ({ score }: Props) => {
-  const color = score > 90 ? "green" : score > 80 ? "yellow" : "red";
+  const color = score > 79 ? "green" : score > 69 ? "yellow" : "red";
 
   return (
     <Text fontSize="xl" fontWeight="bold">
