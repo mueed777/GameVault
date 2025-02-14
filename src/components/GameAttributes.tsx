@@ -19,7 +19,7 @@ const GameAttributes = ({ game }: Props) => {
 
       <DefinitionItem
         heading={"Metascore"}
-        list={<GameScore score={game.metacritic}></GameScore>}
+        list={game.metacritic ? <GameScore score={game.metacritic} /> : "--"}
       ></DefinitionItem>
 
       <DefinitionItem
@@ -38,7 +38,7 @@ const GameAttributes = ({ game }: Props) => {
 
       <DefinitionItem
         heading={"Release Date"}
-        list={game.released}
+        list={game.released ? game.released : "--"}
       ></DefinitionItem>
     </SimpleGrid>
   );
