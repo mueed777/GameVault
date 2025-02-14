@@ -9,7 +9,7 @@ interface Props {
 
 const GameAttributes = ({ game }: Props) => {
   return (
-    <SimpleGrid columns={2}>
+    <SimpleGrid columns={3}>
       <DefinitionItem
         heading={"Platforms"}
         list={game.parent_platforms.map(({ platform }) => (
@@ -19,7 +19,7 @@ const GameAttributes = ({ game }: Props) => {
 
       <DefinitionItem
         heading={"Metascore"}
-        list={<GameScore score={game.metacritic}></GameScore>}
+        list={game.metacritic ? <GameScore score={game.metacritic} /> : "--"}
       ></DefinitionItem>
 
       <DefinitionItem
@@ -34,6 +34,11 @@ const GameAttributes = ({ game }: Props) => {
         list={game.publishers.map((publisher) => (
           <Text key={publisher.id}>{publisher.name}</Text>
         ))}
+      ></DefinitionItem>
+
+      <DefinitionItem
+        heading={"Release Date"}
+        list={game.released ? game.released : "--"}
       ></DefinitionItem>
     </SimpleGrid>
   );
